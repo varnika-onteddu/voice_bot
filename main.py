@@ -1,20 +1,19 @@
 from voice_bot_sdk.sdk import VoiceBotSDK
 
 if __name__ == "__main__":
-    stt_config = {
+    sttcon = {
         'engine': 'deepgram',
         'api_key': '****'
     }
 
-    tts_config = {
+    ttscon = {
         'engine': 'openai',
         'api_key': '****'
     }
 
-    llm_config = {
+    llmcon = {
         'engine': 'openai',
-        'api_key': '****',
-        'system_prompt': 'This is a Bot'
+        'api_key': '****'
     }
 
     sdk = VoiceBotSDK(stt_config, tts_config, llm_config)
