@@ -6,8 +6,8 @@ class DeepgramSTT:
     def __init__(self, api_key):
         self.api_key = api_key
 
-    async def transcribe(self, audio_stream):
-        async with aiohttp.ClientSession() as session:        
+    def transcribe(self, audio_stream):
+        with aiohttp.ClientSession() as session:        
             dg_client = Deepgram(self.api_key)
             source = {'buffer': audio_stream, 'mimetype': 'audio.mp3'}
             response = await dg_client.transcription.prerecorded(source, {'punctuate': True})
